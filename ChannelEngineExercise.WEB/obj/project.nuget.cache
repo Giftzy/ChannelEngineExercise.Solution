@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ReyLvnKVmLjOiOFsdrtiWuhpr97gqD13mrMpbKSwwTlN2NqhtBvQpBmsORp1osw7ldt6Fp4zvc9PJ8fx65aitg==",
+  "dgSpecHash": "GRew5hSCaf5RATrkCiM1IhMEB3sLexiKwJB4lX/yOWtxcszFp1q9xOJGbe/yJfag71h1iLl6cFR9PkErNNlvYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\OGIFT\\Desktop\\Gift'sPersonalDoc\\CodeProjects\\Giftzy\\ChannelEngineExercise.Solution\\ChannelEngineExercise.WEB\\ChannelEngineExercise.WEB.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\OGIFT\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

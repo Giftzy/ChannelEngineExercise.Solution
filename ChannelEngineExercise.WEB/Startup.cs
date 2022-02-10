@@ -1,3 +1,5 @@
+using ChannelEngineExercise.Shared.Utility;
+using ChannelEngineExercise.WEB.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +25,13 @@ namespace ChannelEngineExercise.WEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Get key values from AppSettings.Jsom
+            AppSettings.API_Url = Configuration["AppSettings:API_Url"];
+            AppSettings.API_Key = Configuration["AppSettings:API_Key"];
+            AppSettings.LogPath = Configuration["AppSettings:LogPath"];
+
+            services.ResolveCoreServices();
+
             services.AddControllersWithViews();
         }
 

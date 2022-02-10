@@ -38,3 +38,8 @@ C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExerci
 C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\obj\Debug\net5.0\ChannelEngineExercise.WEB.pdb
 C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\obj\Debug\net5.0\ChannelEngineExercise.WEB.genruntimeconfig.cache
 C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\obj\Debug\net5.0\ChannelEngineExercise.WEB.csproj.CopyComplete
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\bin\Debug\net5.0\ChannelEngineExercise.Core.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\bin\Debug\net5.0\ChannelEngineExercise.Shared.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\bin\Debug\net5.0\ChannelEngineExercise.Shared.pdb
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.WEB\bin\Debug\net5.0\ChannelEngineExercise.Core.pdb
