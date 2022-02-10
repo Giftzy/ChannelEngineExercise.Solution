@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GBlvKe6zEvqfdkI3LtuRtt51RfwryfldBt26gwwLYKvmtOvzlHW5X38xGf3mvLxfDE2GPSPU+ttFPUVNic0Rkw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\OGIFT\\Desktop\\Gift'sPersonalDoc\\CodeProjects\\Giftzy\\ChannelEngineExercise.Solution\\ChannelEngineExercise.Console\\ChannelEngineExercise.Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\OGIFT\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.16\\microsoft.netcore.app.host.win-x64.3.1.16.nupkg.sha512"
+  ],
+  "logs": []
+}

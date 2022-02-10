@@ -1,0 +1,13 @@
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Console.exe
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Console.deps.json
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Console.runtimeconfig.json
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Console.runtimeconfig.dev.json
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Console.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Console.pdb
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.csprojAssemblyReference.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.AssemblyInfoInputs.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.AssemblyInfo.cs
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.csproj.CoreCompileInputs.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.pdb
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Console\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Console.genruntimeconfig.cache

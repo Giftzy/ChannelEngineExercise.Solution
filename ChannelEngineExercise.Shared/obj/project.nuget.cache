@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "hYwgeVqkHJ/BiCZUTUzwroz+genaqYkrqaQoqYfoxGkAeDpkMqM/JlyxnWHXyVzSIwjmDzQXNs44VJp2WpHqCA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\OGIFT\\Desktop\\Gift'sPersonalDoc\\CodeProjects\\Giftzy\\ChannelEngineExercise.Solution\\ChannelEngineExercise.Shared\\ChannelEngineExercise.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\OGIFT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

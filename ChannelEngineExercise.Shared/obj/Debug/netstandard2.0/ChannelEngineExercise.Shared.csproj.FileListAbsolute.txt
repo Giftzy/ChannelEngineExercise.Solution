@@ -1,0 +1,9 @@
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\bin\Debug\netstandard2.0\ChannelEngineExercise.Shared.deps.json
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\bin\Debug\netstandard2.0\ChannelEngineExercise.Shared.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\bin\Debug\netstandard2.0\ChannelEngineExercise.Shared.pdb
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\obj\Debug\netstandard2.0\ChannelEngineExercise.Shared.csprojAssemblyReference.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\obj\Debug\netstandard2.0\ChannelEngineExercise.Shared.AssemblyInfoInputs.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\obj\Debug\netstandard2.0\ChannelEngineExercise.Shared.AssemblyInfo.cs
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\obj\Debug\netstandard2.0\ChannelEngineExercise.Shared.csproj.CoreCompileInputs.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\obj\Debug\netstandard2.0\ChannelEngineExercise.Shared.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\obj\Debug\netstandard2.0\ChannelEngineExercise.Shared.pdb
