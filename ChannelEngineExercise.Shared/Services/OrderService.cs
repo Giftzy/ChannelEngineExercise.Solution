@@ -17,7 +17,6 @@ namespace ChannelEngineExercise.Shared.Services
     {
         public static HttpClient _httpClient;
 
-        private readonly string ModuleName = "OrderService"; //This is used to track which of the service/function is throwing errors in the log files.
         public async Task<OrderEntity> FetchAllOrdersByStatus(string statusType)
         {
             OrderEntity allOrderEntity = new OrderEntity();
@@ -25,34 +24,40 @@ namespace ChannelEngineExercise.Shared.Services
             {
                 using (_httpClient = new HttpClient())
                 {
-                    _httpClient.BaseAddress = new Uri("https://api-dev.channelengine.net/api/v2/");
+                    _httpClient.BaseAddress = new Uri(AppSettings.API_Url);
 
-                    //var postTask = _httpClient.GetAsync("orders?statuses=IN_PROGRESS&apikey=" + AppSettings.API_Key);
-                    //postTask.Wait();
-
-                    //var result = postTask.Result;
-
-                    //if (result.IsSuccessStatusCode)
-                    //{
-                    //    var readTask = JsonConvert.DeserializeObject<OrderEntity>(await result.Content.ReadAsStringAsync());
-                    //    if (readTask != null && readTask.Success == true && readTask.StatusCode == 200)
-                    //    {
-                    //        allOrderEntity = readTask;
-                    //    }
-                    //    else
-                    //        allOrderEntity = null;
-                    //}
-                    //else
-                    //    allOrderEntity = null;
-
-                    var file = File.ReadAllText(@"C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\Services\Data.json").ToString();
-                    var readTask = JsonConvert.DeserializeObject<OrderEntity>(file);
-                    if (readTask != null && readTask.Success == true && readTask.StatusCode == 200)
+                    if (AppSettings.TestMode) //Testing locally
                     {
-                        allOrderEntity = readTask;
+                        var file = File.ReadAllText(@"C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Shared\Services\Data.json").ToString();
+                        var readTask = JsonConvert.DeserializeObject<OrderEntity>(file);
+                        if (readTask != null && readTask.Success == true && readTask.StatusCode == 200)
+                        {
+                            allOrderEntity = readTask;
+                        }
+                        else
+                            allOrderEntity = null;
                     }
                     else
-                        allOrderEntity = null;
+                    {
+                        var postTask = _httpClient.GetAsync("orders?statuses="+ statusType + "&apikey=" + AppSettings.API_Key);
+                        postTask.Wait();
+                        var result = postTask.Result;
+
+                        if (result.IsSuccessStatusCode)
+                        {
+                            var readTask = JsonConvert.DeserializeObject<OrderEntity>(await result.Content.ReadAsStringAsync());
+                            if (readTask != null && readTask.Success == true && readTask.StatusCode == 200)
+                            {
+                                allOrderEntity = readTask;
+                            }
+                            else
+                                allOrderEntity = null;
+                        }
+                        else
+                            allOrderEntity = null;
+                    }
+
+
                 }
             }
             catch (Exception ex)
@@ -66,8 +71,7 @@ namespace ChannelEngineExercise.Shared.Services
         {
             ProductDetail productDetail = null;
             try
-            {
-                
+            {                
                 List<Lines> LineLst = new List<Lines>();
                 if (orderEntity != null)
                 {
@@ -92,7 +96,7 @@ namespace ChannelEngineExercise.Shared.Services
 
                 if (LineLst.Count > 0)
                 {
-                    productDetail = new ProductDetail { ProductLines = (List<Lines>)LineLst.ToList().Take(5)};
+                    productDetail = new ProductDetail { ProductLines = LineLst.ToList().Take(topNo).ToList() };
                 }
             }
             catch(Exception ex)

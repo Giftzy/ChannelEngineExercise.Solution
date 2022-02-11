@@ -29,9 +29,9 @@ namespace ChannelEngineExercise.WEB
             AppSettings.API_Url = Configuration["AppSettings:API_Url"];
             AppSettings.API_Key = Configuration["AppSettings:API_Key"];
             AppSettings.LogPath = Configuration["AppSettings:LogPath"];
+            AppSettings.TestMode = Convert.ToBoolean(Configuration["AppSettings:TestMode"]);
 
             services.ResolveCoreServices();
-
             services.AddControllersWithViews();
         }
 

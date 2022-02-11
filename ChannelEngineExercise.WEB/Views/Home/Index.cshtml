@@ -1,8 +1,104 @@
-﻿@{
+﻿@model List<ChannelEngineExercise.WEB.Models.ProductViewModel>
+
+@{
     ViewData["Title"] = "Home Page";
+    var no = 0;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="modal fade" id="mysuccessmodal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="thank-you-pop">
+                    <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                    <h1>Success!</h1>
+                    <p><label id="successMsg"></label></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="productname" class="form-control-label">Name:</label>
+                    <input type="text" class="form-control" id="productname" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="merchant-productno" class="form-control-label">Merchant Product No:</label>
+                    <input type="text" class="form-control" id="merchant-productno" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productstock" class="form-control-label">Stock:</label>
+                    <input type="text" value="25" class="form-control" id="productstock" readonly>
+                    <label id="stockLocationId" hidden></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-primary" onclick="UpdateProductStock()">Update product stock</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+            <h3 class="mb-30">Product Listing</h3>
+            <div class="progress-table-wrap">
+                <div class="progress-table">
+                    <div class="table-head">
+                        <div class="serial">#</div>
+                        <div class="country">Name</div>
+                        <div class="visit">GTIN</div>
+                        <div class="percentage">Quantity</div>
+                        <div class="percentage">Action</div>
+                    </div>
+                    @{
+                        if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                no++;
+                                <div class="table-row">
+                                    <div class="serial">@no</div>
+                                    <div class="country"> @item.ProductName</div>
+                                    <div class="visit"> @item.GTIN</div>
+                                    <div class="percentage"> @item.Quantity</div>
+                                    <div class="" onclick="callProductFunc('@item.ProductName', '@item.MerchantProductNo', '@item.StockLocationId')">
+                                        <a href="#" class="genric-btn link-border">Update Product Stock</a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            no++;
+                            <div class="table-row">
+                                No record found!
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
