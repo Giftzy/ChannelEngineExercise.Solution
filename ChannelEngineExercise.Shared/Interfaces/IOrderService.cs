@@ -8,8 +8,8 @@ namespace ChannelEngineExercise.Shared.Interfaces
 {
     public interface IOrderService
     {
-        Task<OrderEntity> FetchAllOrdersByStatus(string statusType);
-        Task<ProductDetail> GetTopNoProductByQuantityDescOrder(OrderEntity orderEntity, int topNo);
+        Task<List<Content>> FetchAllOrdersByStatus(string statusType);
+        Task<List<Line>> GetTopNProductByQuantity(List<Content> orderLst, int topNo);
         Task<GenericAPIResponse> UpdateProductStock(ProductStockModel productStockModel);
     }
 }

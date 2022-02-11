@@ -1,4 +1,5 @@
 ﻿using ChannelEngineExercise.Core;
+using ChannelEngineExercise.Core.Comparers;
 using ChannelEngineExercise.Shared.Interfaces;
 using ChannelEngineExercise.Shared.Utility;
 using Newtonsoft.Json;
@@ -17,9 +18,9 @@ namespace ChannelEngineExercise.Shared.Services
     {
         public static HttpClient _httpClient;
 
-        public async Task<OrderEntity> FetchAllOrdersByStatus(string statusType)
+        public async Task<List<Content>> FetchAllOrdersByStatus(string statusType)
         {
-            OrderEntity allOrderEntity = new OrderEntity();
+            List<Content> LineLst = new List<Content>();
             try
             {
                 using (_httpClient = new HttpClient())
@@ -32,10 +33,10 @@ namespace ChannelEngineExercise.Shared.Services
                         var readTask = JsonConvert.DeserializeObject<OrderEntity>(file);
                         if (readTask != null && readTask.Success == true && readTask.StatusCode == 200)
                         {
-                            allOrderEntity = readTask;
+                            LineLst = readTask.Content;
                         }
                         else
-                            allOrderEntity = null;
+                            LineLst = null;
                     }
                     else
                     {
@@ -48,13 +49,13 @@ namespace ChannelEngineExercise.Shared.Services
                             var readTask = JsonConvert.DeserializeObject<OrderEntity>(await result.Content.ReadAsStringAsync());
                             if (readTask != null && readTask.Success == true && readTask.StatusCode == 200)
                             {
-                                allOrderEntity = readTask;
+                                LineLst = readTask.Content;
                             }
                             else
-                                allOrderEntity = null;
+                                LineLst = null;
                         }
                         else
-                            allOrderEntity = null;
+                            LineLst = null;
                     }
 
 
@@ -62,49 +63,42 @@ namespace ChannelEngineExercise.Shared.Services
             }
             catch (Exception ex)
             {
-                allOrderEntity = null;
+                LineLst = null;
             }
-            return allOrderEntity;
+            return LineLst;
         }
 
-        public async Task<ProductDetail> GetTopNoProductByQuantityDescOrder(OrderEntity orderEntity, int topNo)
+        public async Task<List<Line>> GetTopNProductByQuantity(List<Content> orderLst, int n)
         {
-            ProductDetail productDetail = null;
+            List<Line> productlist = null;
             try
-            {                
-                List<Lines> LineLst = new List<Lines>();
-                if (orderEntity != null)
-                {
-                    orderEntity.Content.ForEach(x =>
-                    {
-                        foreach (var lineItem in x.Lines)
-                        {
-                            Lines xItem = new Lines
-                            {
-                                ChannelProductNo = lineItem.ChannelProductNo,
-                                Description = lineItem.Description,
-                                Gtin = lineItem.Gtin,
-                                MerchantProductNo = lineItem.MerchantProductNo,
-                                Quantity = lineItem.Quantity,
-                                Status = lineItem.Status,
-                                StockLocation = lineItem.StockLocation
-                            };
-                            LineLst.Add(xItem);
-                        }
-                    });
-                }
-
-                if (LineLst.Count > 0)
-                {
-                    productDetail = new ProductDetail { ProductLines = LineLst.ToList().Take(topNo).ToList() };
-                }
+            {  
+                var lineDict = await GetSortedProductCountGrouping(orderLst);
+                productlist = lineDict.Keys.Take(n).ToList();
             }
             catch(Exception ex)
             {
             }
-            return productDetail;
+            return productlist;
 
         }
+
+        private async Task<SortedDictionary<Line, int>> GetSortedProductCountGrouping(List<Content> orderLst)
+        {
+            SortedDictionary<Line, int> lineDict = new SortedDictionary<Line, int>(new LineComparer());
+            
+            foreach(var item in orderLst)
+            {
+                foreach (var line in item.Lines)
+                {
+                    if (!lineDict.ContainsKey(line))
+                    {
+                        lineDict.Add(line, line.Quantity);
+                    }
+                }
+            }
+            return lineDict;
+        } 
         public async Task<GenericAPIResponse> UpdateProductStock(ProductStockModel productStockModel)
         {
             GenericAPIResponse genericAPIResponse = new GenericAPIResponse { Status = true };
@@ -156,6 +150,33 @@ namespace ChannelEngineExercise.Shared.Services
             }
             return genericAPIResponse;
         }
+
+        //public List<Content> InitOrderList(OrderEntity orderEntity)
+        //{
+        //    List<Lines> LineLst = new List<Lines>();
+        //    if (orderEntity != null)
+        //    {
+        //        orderEntity.Content.ForEach(x =>
+        //        {
+        //            foreach (var lineItem in x.Lines)
+        //            {
+        //                Lines xItem = new Lines
+        //                {
+        //                    ChannelProductNo = lineItem.ChannelProductNo,
+        //                    Description = lineItem.Description,
+        //                    Gtin = lineItem.Gtin,
+        //                    MerchantProductNo = lineItem.MerchantProductNo,
+        //                    Quantity = lineItem.Quantity,
+        //                    Status = lineItem.Status,
+        //                    StockLocation = lineItem.StockLocation
+        //                };
+        //                LineLst.Add(xItem);
+        //            }
+        //        });
+        //    }
+
+        //     return LineLst;
+        //}
 
     }
 }

@@ -1,4 +1,9 @@
+using ChannelEngineExercise.Core;
+using ChannelEngineExercise.Shared.Interfaces;
+using ChannelEngineExercise.Shared.Services;
+using Newtonsoft.Json;
 using System;
+using System.IO;
 using Xunit;
 
 namespace ChannelEngineExercise.Test

@@ -15,6 +15,6 @@ namespace ChannelEngineExercise.Core
         public string MerchantOrderNo { get; set; }
         public string Status { get; set; }
         public string CreatedAt { get; set; }
-        public List<Lines> Lines { get; set; }
+        public List<Line> Lines { get; set; }
     }
 }

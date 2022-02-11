@@ -95,3 +95,7 @@ C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExerci
 C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Test.dll
 C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Test.pdb
 C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\obj\Debug\netcoreapp3.1\ChannelEngineExercise.Test.genruntimeconfig.cache
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Core.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Shared.dll
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Shared.pdb
+C:\Users\OGIFT\Desktop\Gift'sPersonalDoc\CodeProjects\Giftzy\ChannelEngineExercise.Solution\ChannelEngineExercise.Test\bin\Debug\netcoreapp3.1\ChannelEngineExercise.Core.pdb

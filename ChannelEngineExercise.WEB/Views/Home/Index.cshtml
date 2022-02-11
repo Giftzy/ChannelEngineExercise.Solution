@@ -1,4 +1,4 @@
-﻿@model List<ChannelEngineExercise.WEB.Models.ProductViewModel>
+﻿@model ProductViewModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -72,17 +72,17 @@
                         <div class="percentage">Action</div>
                     </div>
                     @{
-                        if (Model != null && Model.Count > 0)
+                        if (Model != null && Model.Products.Count > 0)
                         {
-                            foreach (var item in Model)
+                            foreach (var item in Model.Products)
                             {
                                 no++;
                                 <div class="table-row">
                                     <div class="serial">@no</div>
-                                    <div class="country"> @item.ProductName</div>
-                                    <div class="visit"> @item.GTIN</div>
+                                    <div class="country"> @item.Description</div>
+                                    <div class="visit"> @item.Gtin</div>
                                     <div class="percentage"> @item.Quantity</div>
-                                    <div class="" onclick="callProductFunc('@item.ProductName', '@item.MerchantProductNo', '@item.StockLocationId')">
+                                    <div class="" onclick="callProductFunc('@item.Description', '@item.MerchantProductNo', '@item.StockLocation.Id')">
                                         <a href="#" class="genric-btn link-border">Update Product Stock</a>
                                     </div>
                                 </div>

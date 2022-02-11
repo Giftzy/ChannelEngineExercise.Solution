@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChannelEngineExercise.Core
 {
-    public class Lines
+    public class Line
     {
         public string Status { get; set; }
         public string Gtin { get; set; }
@@ -13,5 +13,11 @@ namespace ChannelEngineExercise.Core
         public string MerchantProductNo { get; set; }
         public int Quantity { get; set; }
         public StockLocation StockLocation { get; set; }
+
+        public override string ToString()
+        {
+            return Gtin;
+        }
+        
     }
 }

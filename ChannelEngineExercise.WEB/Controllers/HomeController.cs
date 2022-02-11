@@ -31,34 +31,16 @@ namespace ChannelEngineExercise.WEB.Controllers
                 var orderData = await orderService.FetchAllOrdersByStatus(statusType);
 
                 //Get Top 5 product order by quantity sold
-                var productLst = await orderService.GetTopNoProductByQuantityDescOrder(orderData, 5);
-
-                return View(InitRequestData(productLst));
+                var productLst = await orderService.GetTopNProductByQuantity(orderData, 5);
+                return View(new ProductViewModel
+                {
+                    Products = productLst
+                });
             }
             catch(Exception ex)
             {
                 return View(new List<ProductViewModel>());
             }
-        }
-
-        public List<ProductViewModel> InitRequestData(ProductDetail productDetail)
-        {
-            List<ProductViewModel> productViews = new List<ProductViewModel>();
-            productDetail.ProductLines.ForEach(x =>
-            {
-                ProductViewModel productViewModel = new ProductViewModel
-                {
-                    GTIN = x.Gtin,
-                    MerchantProductNo = x.MerchantProductNo,
-                    ProductName = x.Description,
-                    Quantity = x.Quantity,
-                    StockLocationId = x.StockLocation.Id
-                };
-
-                productViews.Add(productViewModel);
-            });
-
-            return productViews;
         }
 
         [HttpPost]

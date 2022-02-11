@@ -6,6 +6,6 @@ namespace ChannelEngineExercise.Core
 {
     public class ProductDetail
     {
-        public List<Lines> ProductLines { get; set; }
+        public List<Line> ProductLines { get; set; }
     }
 }
