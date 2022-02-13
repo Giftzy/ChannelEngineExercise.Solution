@@ -1,12 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "5Mow/vkN1zUeZbjuQCmQTehB3fBOqslEfg9fdVmScBTkNmsHT3BIk71Zzah2qSshQZJ/jgN3oRJ3RQl53xe/dw==",
+  "dgSpecHash": "CueF+aJ3Vdfghc1NU/H7sMCMIPPUaDh2P6LYIeZgf/tX6mjW8x1eaHfSpNkKbAlxspWsvQpHpEntP7/Kd8ZpDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\OGIFT\\Desktop\\Gift'sPersonalDoc\\CodeProjects\\Giftzy\\ChannelEngineExercise.Solution\\ChannelEngineExercise.Shared\\ChannelEngineExercise.Shared.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\OGIFT\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.2\\microsoft.aspnetcore.jsonpatch.6.0.2.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\OGIFT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\OGIFT\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\OGIFT\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\OGIFT\\.nuget\\packages\\validation\\2.5.51\\validation.2.5.51.nupkg.sha512"
   ],
   "logs": []
 }

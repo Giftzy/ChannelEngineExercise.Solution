@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChannelEngineExercise.Core
 {
-    public class OrderEntity
+    public class RootEntity
     {
         public List<Content> Content { get; set; }
         public int Count { get; set; }

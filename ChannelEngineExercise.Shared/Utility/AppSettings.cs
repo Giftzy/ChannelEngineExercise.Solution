@@ -10,5 +10,6 @@ namespace ChannelEngineExercise.Shared.Utility
         public static string API_Key { get; set; }
         public static string LogPath { get; set; }
         public static bool TestMode { get; set; }
+        //public 
     }
 }

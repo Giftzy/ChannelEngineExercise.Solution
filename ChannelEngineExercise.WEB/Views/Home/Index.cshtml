@@ -5,7 +5,7 @@
     var no = 0;
 }
 
-<div class="modal fade" id="mysuccessmodal" role="dialog">
+<div class="modal fade" id="myAlertModal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -15,9 +15,9 @@
             <div class="modal-body">
 
                 <div class="thank-you-pop">
-                    <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-                    <h1>Success!</h1>
-                    <p><label id="successMsg"></label></p>
+                    <img id="myAlertImg" src="" alt="">
+                    <h1 id="hrTitle"></h1>
+                    <p><label id="lblAlertMsg"></label></p>
                 </div>
 
             </div>
@@ -37,17 +37,17 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="productname" class="form-control-label">Name:</label>
-                    <input type="text" class="form-control" id="productname" readonly>
+                    <label for="txtproductname" class="form-control-label">Name:</label>
+                    <input type="text" class="form-control" id="txtproductname" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="merchant-productno" class="form-control-label">Merchant Product No:</label>
-                    <input type="text" class="form-control" id="merchant-productno" readonly>
+                    <label for="txtmerchantproductno" class="form-control-label">Merchant Product No:</label>
+                    <input type="text" class="form-control" id="txtmerchantproductno" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="productstock" class="form-control-label">Stock:</label>
-                    <input type="text" value="25" class="form-control" id="productstock" readonly>
-                    <label id="stockLocationId" hidden></label>
+                    <label for="txtproductstock" class="form-control-label">Stock:</label>
+                    <input type="text" value="25" class="form-control" id="txtproductstock" readonly>
+                    <label id="lblstockLocationId" hidden></label>
                 </div>
             </div>
             <div class="modal-footer">
@@ -68,7 +68,7 @@
                         <div class="serial">#</div>
                         <div class="country">Name</div>
                         <div class="visit">GTIN</div>
-                        <div class="percentage">Quantity</div>
+                        <div class="percentage">TotalQuantity</div>
                         <div class="percentage">Action</div>
                     </div>
                     @{
@@ -91,7 +91,7 @@
                         else
                         {
                             no++;
-                            <div class="table-row">
+                            <div class="table-row" style="align-content:center">
                                 No record found!
                             </div>
                         }

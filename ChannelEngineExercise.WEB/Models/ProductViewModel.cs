@@ -8,6 +8,8 @@ namespace ChannelEngineExercise.WEB.Models
 {
     public class ProductViewModel
     {
+        public bool Status { get; set; }
+        public string Message { get; set; }
         public List<Line> Products { get; set; }
     }
 }

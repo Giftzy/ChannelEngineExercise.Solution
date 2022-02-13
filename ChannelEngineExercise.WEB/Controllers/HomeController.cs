@@ -14,32 +14,41 @@ namespace ChannelEngineExercise.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IOrderService orderService;
-        public HomeController(IOrderService _orderService)
+        private readonly IOrderService _orderService;
+        private readonly ILogger _logger;
+        public HomeController(ILogger<HomeController> logger, IOrderService orderService)
         {
-            orderService = _orderService;
+            this._orderService = orderService;
+            this._logger = logger;
         }
 
         public async Task<IActionResult> Index()
         {
             try
             {
-                //Get status type from enum helper
-                string statusType = Enum.GetName(typeof(OrderStatus), 1);
+                //Get IN_PROGRESS status type from enum helper
+                string statusType = Enum.GetName(typeof(OrderStatus), OrderStatus.IN_PROGRESS);
 
                 //Fetch all orders
-                var orderData = await orderService.FetchAllOrdersByStatus(statusType);
-
-                //Get Top 5 product order by quantity sold
-                var productLst = await orderService.GetTopNProductByQuantity(orderData, 5);
-                return View(new ProductViewModel
+                var orderData = await _orderService.FetchAllOrdersByStatus(statusType);
+                if(orderData != null && orderData.Count > 0)
                 {
-                    Products = productLst
-                });
+                    //Get Top 5 product order by quantity sold
+                    var productLst = await _orderService.GetTopNProductByQuantity(orderData, 5);
+                    return View(new ProductViewModel
+                    {
+                        Products = productLst
+                    });
+                }
+                else
+                {
+                    return View();
+                }                
             }
             catch(Exception ex)
-            {
-                return View(new List<ProductViewModel>());
+            { 
+                _logger.LogError(ex.Message);
+                return View();
             }
         }
 
@@ -48,7 +57,7 @@ namespace ChannelEngineExercise.WEB.Controllers
         {
             try
             {
-                var updateResp = await orderService.UpdateProductStock(new Shared.ProductStockModel
+                var updateResp = await _orderService.UpdateProductStock(new Shared.ProductStockModel
                 {
                     MerchantProductNo = stockModel.MerchantProductNo,
                     Stock = stockModel.Stock,
@@ -62,6 +71,8 @@ namespace ChannelEngineExercise.WEB.Controllers
             }
             catch(Exception ex)
             {
+
+                _logger.LogError(ex.Message);
                 return Json(new
                 {
                     success = false,

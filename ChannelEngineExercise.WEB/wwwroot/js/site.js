@@ -1,13 +1,10 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿// Write your JavaScript code.
 
 
 function callProductFunc(ProductName, MerchantProductNo, StockLocationId) {
-    $('#productname').val(ProductName);
-    $('#merchant-productno').val(MerchantProductNo);
-    $("#stockLocationId").text(StockLocationId);
+    $('#txtproductname').val(ProductName);
+    $('#txtmerchantproductno').val(MerchantProductNo);
+    $("#lblstockLocationId").text(StockLocationId);
     $('#exampleModal').modal({
         backdrop: 'static',
         keyboard: false,
@@ -20,11 +17,10 @@ function UpdateProductStock() {
     debugger;
 
     var stockmodel = JSON.stringify({
-        'MerchantProductNo': $("#merchant-productno").val(),
-        'Stock': $("#productstock").val(),
-        'StockLocationId': $('#stockLocationId').html()
+        'MerchantProductNo': $("#txtmerchantproductno").val(),
+        'Stock': $("#txtproductstock").val(),
+        'StockLocationId': $('#lblstockLocationId').html()
     });
-
 
     $.ajax({
         type: "POST",
@@ -37,17 +33,23 @@ function UpdateProductStock() {
 
     function onSuccessCall(data) {
         if (data.success) {
-            //dismiss product detail modal
-            $('#exampleModal').modal('toggle');
-
-            //display success modal
-            $("#successMsg").text(data.message);
-            $('#mysuccessmodal').modal({
-                backdrop: 'static',
-                keyboard: false,
-                show: true
-            });
+            //Set Alert Img to Success
+            $("#myAlertImg").attr("src", "assets/img/elements/success1.png");
+        } else {
+            //Set Alert Img to Fail
+            $("#myAlertImg").attr("src", "assets/img/elements/failure.jpg");
         }
+
+        //dismiss product detail modal
+        $('#exampleModal').modal('toggle');
+
+        //display success modal
+        $("#lblAlertMsg").text(data.message);
+        $('#myAlertModal').modal({
+            backdrop: 'static',
+            keyboard: false,
+            show: true
+        });
     }
 
 }
