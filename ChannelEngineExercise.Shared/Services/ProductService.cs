@@ -1,7 +1,6 @@
 ﻿using ChannelEngineExercise.Core;
 using ChannelEngineExercise.Core.Comparers;
 using ChannelEngineExercise.Shared.Interfaces;
-using ChannelEngineExercise.Shared.Model;
 using ChannelEngineExercise.Shared.Utility;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
