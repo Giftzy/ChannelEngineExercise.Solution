@@ -6,7 +6,7 @@ namespace ChannelEngineExercise.Core
 {
     public class RootEntity
     {
-        public List<Content> Content { get; set; }
+        public List<Order> Content { get; set; }
         public int Count { get; set; }
         public int TotalCount { get; set; }
         public int ItemsPerPage { get; set; }

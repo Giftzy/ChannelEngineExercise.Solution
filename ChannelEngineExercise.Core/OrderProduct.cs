@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChannelEngineExercise.Core
 {
-    public class Line
+    public class OrderProduct
     {
         public string Status { get; set; }
         public string Gtin { get; set; }

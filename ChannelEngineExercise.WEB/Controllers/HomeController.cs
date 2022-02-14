@@ -15,10 +15,12 @@ namespace ChannelEngineExercise.WEB.Controllers
     public class HomeController : Controller
     {
         private readonly IOrderService _orderService;
+        private readonly IProductService _productService;
         private readonly ILogger _logger;
-        public HomeController(ILogger<HomeController> logger, IOrderService orderService)
+        public HomeController(ILogger<HomeController> logger, IOrderService orderService, IProductService productService)
         {
             this._orderService = orderService;
+            this._productService = productService;
             this._logger = logger;
         }
 
@@ -34,7 +36,7 @@ namespace ChannelEngineExercise.WEB.Controllers
                 if(orderData != null && orderData.Count > 0)
                 {
                     //Get Top 5 product order by quantity sold
-                    var productLst = await _orderService.GetTopNProductByQuantity(orderData, 5);
+                    var productLst = await _productService.GetTopNProductByQuantity(orderData, 5);
                     return View(new ProductViewModel
                     {
                         Products = productLst
@@ -53,11 +55,11 @@ namespace ChannelEngineExercise.WEB.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> UpdateProductStockAsync([FromBody] StockModel stockModel)
+        public async Task<JsonResult> UpdateProductStock([FromBody] StockModel stockModel)
         {
             try
             {
-                var updateResp = await _orderService.UpdateProductStock(new Shared.ProductStockModel
+                var updateResp = await _productService.UpdateProductStock(new Shared.ProductStockModel
                 {
                     MerchantProductNo = stockModel.MerchantProductNo,
                     Stock = stockModel.Stock,

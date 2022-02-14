@@ -16,27 +16,27 @@ namespace ChannelEngineExercise.Test
     public class ProductTest
     {
         
-        private readonly IOrderService _service;
+        private readonly IProductService _service;
         public ProductTest()
         {
-            var orderLoggerStub = new Mock<ILogger<OrderService>>();
-            _service = new OrderService(orderLoggerStub.Object);
+            var loggerStub = new Mock<ILogger<ProductService>>();
+            _service = new ProductService(loggerStub.Object);
         }
 
         [Fact]
-        public async Task GetTopNProductByQuantity_WhenCalled_ReturnsAllProducts()
+        public async Task GetTopNProductByQuantity_WhenCalled_ReturnsAll5Products()
         {
             //Arrange
             //Dummy Data
             var dummyInputData = new InMemoeryProductData().GetDummyTestData();
-            var productList = JsonConvert.DeserializeObject<RootEntity>(dummyInputData).Content;
+            var orderList = JsonConvert.DeserializeObject<RootEntity>(dummyInputData).Content;
 
             // Act
-            var result = await _service.GetTopNProductByQuantity(productList, 5);
+            var productList = await _service.GetTopNProductByQuantity(orderList, 5);
 
             // Assert
-            Assert.Equal(5, result.Count);
-            Assert.IsType<List<Line>>(result);
+            Assert.Equal(5, productList.Count);
+            Assert.IsType<List<OrderProduct>>(productList);
 
         }
 
@@ -44,13 +44,13 @@ namespace ChannelEngineExercise.Test
         public async Task GetTopNProductByQuantity_WithNullInput_ReturnsNull()
         {
             //Arrange
-            List<Content> productList = null;
+            List<Order> orderList = null;
 
             // Act
-            var result = await _service.GetTopNProductByQuantity(productList, 5);
+            var productList = await _service.GetTopNProductByQuantity(orderList, 5);
 
             // Assert
-            Assert.Null(result);
+            Assert.Null(productList);
         }
     }
 }

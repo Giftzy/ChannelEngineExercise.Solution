@@ -22,17 +22,16 @@ namespace ChannelEngineExercise.Console
             var serviceProvider = serviceCollection.BuildServiceProvider(); 
 
             IOrderService orderService = new OrderService(serviceProvider.GetRequiredService<ILogger<OrderService>>());
+            IProductService productService = new ProductService(serviceProvider.GetRequiredService<ILogger<ProductService>>());
+            ConfigureAppSettings();
 
             //Get status type from enum helper
-            string statusType = Enum.GetName(typeof(OrderStatus), 1);
-
-            AppSettings.API_Url = "https://api-dev.channelengine.net/api/v2/";
-            AppSettings.API_Key = "541b989ef78ccb1bad630ea5b85c6ebff9ca3322";
-            AppSettings.TestMode = true;
+            string statusType = Enum.GetName(typeof(OrderStatus), 1);            
 
             var allOrders = await orderService.FetchAllOrdersByStatus(statusType);
-            var topProductList = await orderService.GetTopNProductByQuantity(allOrders, 5);
+            var topProductList = await productService.GetTopNProductByQuantity(allOrders, 5);
 
+            //Print list of Top N Products to Console
             System.Console.Clear();
             ConsoleTable.From(InitListView(topProductList)).Write();
 
@@ -42,7 +41,7 @@ namespace ChannelEngineExercise.Console
             {
                 var product = topProductList.Where(x => x.MerchantProductNo == prodCode).FirstOrDefault();
                 //Update Product and set Stock to 25
-                var updateStatus = await orderService.UpdateProductStock(new Shared.ProductStockModel
+                var updateStatus = await productService.UpdateProductStock(new Shared.ProductStockModel
                 {
                     MerchantProductNo = product.MerchantProductNo,
                     Stock = 25,
@@ -63,9 +62,16 @@ namespace ChannelEngineExercise.Console
         {
             //we will configure logging here
             services.AddLogging(configure => configure.AddConsole())
-                .AddTransient<IOrderService, OrderService>();
+                .AddTransient<IOrderService, OrderService>()
+                .AddTransient<IProductService, ProductService>();
         }
-        public static List<ProductView> InitListView(List<Line> products)
+
+        private static void ConfigureAppSettings()
+        {
+            AppSettings.API_Url = "https://api-dev.channelengine.net/api/v2/";
+            AppSettings.API_Key = "541b989ef78ccb1bad630ea5b85c6ebff9ca3322";
+        }
+        public static List<ProductView> InitListView(List<OrderProduct> products)
         {
             List<ProductView> productViews = new List<ProductView>();
             products.ForEach(x =>

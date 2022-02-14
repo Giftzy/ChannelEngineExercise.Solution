@@ -13,6 +13,7 @@ namespace ChannelEngineExercise.WEB.Extensions
         public static void ResolveCoreServices(this IServiceCollection services)
         {
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddHttpClient();
         }
     }

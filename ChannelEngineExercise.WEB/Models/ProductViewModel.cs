@@ -10,6 +10,6 @@ namespace ChannelEngineExercise.WEB.Models
     {
         public bool Status { get; set; }
         public string Message { get; set; }
-        public List<Line> Products { get; set; }
+        public List<OrderProduct> Products { get; set; }
     }
 }

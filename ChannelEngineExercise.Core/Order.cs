@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ChannelEngineExercise.Core
 {
-    public class Content
+    public class Order
     {
         public int Id { get; set; }
         public string ChannelName { get; set; }
@@ -15,6 +15,6 @@ namespace ChannelEngineExercise.Core
         public string MerchantOrderNo { get; set; }
         public string Status { get; set; }
         public DateTime CreatedAt { get; set; }
-        public List<Line> Lines { get; set; }
+        public List<OrderProduct> Lines { get; set; }
     }
 }
